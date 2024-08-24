@@ -78,10 +78,10 @@ func parse_emojis(text: String):
 		var replacement := get_emoji_bbcode(emoji, size)
 		
 		if !replacement:
-			result = re.search(text, result.get_end())
+			result = re.search(text)
 			continue
 
 		text = text.replace(result.get_string(), replacement)
-		result = re.search(text, result.get_end())
+		result = re.search(text)
 	
 	return text
